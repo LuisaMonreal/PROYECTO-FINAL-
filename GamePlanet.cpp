@@ -62,8 +62,8 @@ int main()
 			break;
 
 		case 6:
-			printf("saliendo...\n\n");
-			system("pause");
+			Archivo();
+			exit(1);
 			break;
 
 		default:
@@ -156,8 +156,9 @@ void Modificar()
 
 	for (int i = 0; i < registros; i++)
 	{
-		if (modificar = item[i])
+		if (modificar == item[i])
 		{
+			
 			printf(" Ingrese el a%co\n", 164);
 			scanf_s("%d", &a�o[i]);
 
@@ -181,6 +182,7 @@ void Modificar()
 			scanf_s("%f", &precio[i]);
 			iva[i] = precio[i] * .16;
 			total[i] = precio[i] + iva[i];
+			
 		}
 	}
 }
@@ -261,7 +263,7 @@ void Archivo()
 	ofstream archivos;
 	string nombre;
 
-	nombre = "Almacenamiento";
+	nombre = "Almacenamiento.txt";
 	archivos.open(nombre.c_str(), ios::out);
 
 	if (archivos.fail())
